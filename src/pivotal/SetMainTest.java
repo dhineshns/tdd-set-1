@@ -69,4 +69,15 @@ public class SetMainTest {
 		}
 		assertEquals(true, setMain.contains(9));
 	}
+	
+	// Req 7 : Delete non existing element
+	@Test
+	public void TestSetDeleteNonExistingElement(){
+		int sizeMarginallyHigher = 11;
+		SetMain setMain = new SetMain();
+		for(int i = 0; i<sizeMarginallyHigher; i++){
+			setMain.insert(i);
+		}
+		assertEquals(false, setMain.delete(13));
+	}
 }

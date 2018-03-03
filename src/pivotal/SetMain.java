@@ -41,4 +41,8 @@ public class SetMain {
 		return false;
 	}
 
+	public Object delete(int item) {
+		return false;
+	}
+
 };
