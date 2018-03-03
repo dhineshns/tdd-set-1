@@ -31,5 +31,9 @@ public class SetMain {
 	public Object size() {
 		return lastIndex+1;
 	}
-	
+
+	public Object contains(int item) {
+		return false;
+	}
+
 };

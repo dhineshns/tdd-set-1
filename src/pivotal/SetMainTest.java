@@ -2,6 +2,8 @@ package pivotal;
 
 import static org.junit.Assert.*;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 import org.junit.Test;
 
 public class SetMainTest {
@@ -35,7 +37,7 @@ public class SetMainTest {
 				
 	}
 	
-	// Req 4 : Insert multi elemets with resizing
+	// Req 4 : Insert multi elements with resizing
 	@Test
 	public void TestSetInsertMultiResizingInsert(){
 		int sizeMarginallyHigher = 11;
@@ -44,5 +46,16 @@ public class SetMainTest {
 			setMain.insert(i);
 		}
 		assertEquals(sizeMarginallyHigher, setMain.size());
+	}
+	
+	// Req 5 : Contains? non existing element
+	@Test
+	public void TestSetContainsNonExistingElement(){
+		int sizeMarginallyHigher = 11;
+		SetMain setMain = new SetMain();
+		for(int i = 0; i<sizeMarginallyHigher; i++){
+			setMain.insert(i);
+		}
+		assertEquals(false, setMain.contains(14));
 	}
 }
