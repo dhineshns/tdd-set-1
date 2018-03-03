@@ -3,12 +3,15 @@ package pivotal;
 import java.util.HashSet;
 
 public class SetMain {
-
+	int[] dataStore = new int[10];
+	int lastIndex = -1;
 	public void insert(int i) {
+		lastIndex++;
+		dataStore[lastIndex] = i;
 	}
 
 	public Object size() {
-		return 1;
+		return lastIndex+1;
 	}
 	
 };
