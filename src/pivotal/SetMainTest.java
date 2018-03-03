@@ -58,4 +58,15 @@ public class SetMainTest {
 		}
 		assertEquals(false, setMain.contains(14));
 	}
+	
+	// Req 6 : Contains for existing element
+	@Test
+	public void TestSetContainsExistingElement(){
+		int sizeMarginallyHigher = 11;
+		SetMain setMain = new SetMain();
+		for(int i = 0; i<sizeMarginallyHigher; i++){
+			setMain.insert(i);
+		}
+		assertEquals(true, setMain.contains(9));
+	}
 }
