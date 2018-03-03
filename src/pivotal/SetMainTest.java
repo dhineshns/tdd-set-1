@@ -80,4 +80,16 @@ public class SetMainTest {
 		}
 		assertEquals(false, setMain.delete(13));
 	}
+	
+	// Req 8 : Delete existing element
+		@Test
+		public void TestSetDeleteExistingElement(){
+			int sizeMarginallyHigher = 11;
+			SetMain setMain = new SetMain();
+			for(int i = 0; i<sizeMarginallyHigher; i++){
+				setMain.insert(i);
+			}
+			assertEquals(true, setMain.delete(10));
+			assertEquals(10, setMain.size());
+		}
 }
