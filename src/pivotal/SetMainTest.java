@@ -22,4 +22,16 @@ public class SetMainTest {
 		}
 		assertEquals(10, setMain.size());
 	}
+	
+	// Req 3 : Insert when more extrememly large elements
+	@Test
+	public void TestSetInsetExtremelyLarge(){
+		int extremelyLargeInt = 100000;
+		SetMain setMain = new SetMain(extremelyLargeInt);
+		for(int i = 0; i< extremelyLargeInt; i++){
+			setMain.insert(i);
+		}
+		assertEquals(extremelyLargeInt, setMain.size());
+				
+	}
 }
