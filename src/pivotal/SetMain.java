@@ -1,5 +1,6 @@
 package pivotal;
 
+import java.lang.reflect.Array;
 import java.util.HashSet;
 
 public class SetMain {
@@ -13,9 +14,18 @@ public class SetMain {
 		dataStore = new int[10];
 	}
 
-	public void insert(int i) {
-		lastIndex++;
-		dataStore[lastIndex] = i;
+	public void insert(int item) {
+		if(lastIndex<=dataStore.length/2){
+			lastIndex++;
+			dataStore[lastIndex] = item;
+		}else{
+			int[] tempDataStore = new int[dataStore.length*2];
+			for(int i=0; i<dataStore.length; i++){
+				tempDataStore[i] = dataStore[i];
+			}
+			dataStore = tempDataStore;
+			insert(item);
+		}
 	}
 
 	public Object size() {

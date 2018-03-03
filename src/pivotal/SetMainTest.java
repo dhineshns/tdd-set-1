@@ -34,4 +34,15 @@ public class SetMainTest {
 		assertEquals(extremelyLargeInt, setMain.size());
 				
 	}
+	
+	// Req 4 : Insert multi elemets with resizing
+	@Test
+	public void TestSetInsertMultiResizingInsert(){
+		int sizeMarginallyHigher = 11;
+		SetMain setMain = new SetMain();
+		for(int i = 0; i<sizeMarginallyHigher; i++){
+			setMain.insert(i);
+		}
+		assertEquals(sizeMarginallyHigher, setMain.size());
+	}
 }
