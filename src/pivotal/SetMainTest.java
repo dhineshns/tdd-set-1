@@ -4,10 +4,22 @@ import static org.junit.Assert.*;
 
 import javax.naming.spi.DirStateFactory.Result;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
+import junit.extensions.TestSetup;
+
 public class SetMainTest {
-	// Req 1 : Insert 1 element and see the size of the set
+	
+	// Req : Insert no element and see the size of the set
+	@Test
+	public void testSetEmpty(){
+		SetMain setMain = new SetMain();
+		assertEquals(0, setMain.size());
+	}
+	
+	// Req : Insert 1 element and see the size of the set
 	@Test
 	public void testSetInsert1Element(){
 		SetMain setMain = new SetMain();
@@ -15,7 +27,7 @@ public class SetMainTest {
 		assertEquals(1, setMain.size());
 	}
 	
-	// Req 2 : Insert multi elements and look at size
+	// Req : Insert multi elements and look at size
 	@Test
 	public void testSetInsertMultiElements(){
 		SetMain setMain = new SetMain();
@@ -25,7 +37,7 @@ public class SetMainTest {
 		assertEquals(10, setMain.size());
 	}
 	
-	// Req 3 : Insert when more extrememly large elements
+	// Req : Insert when more extrememly large elements
 	@Test
 	public void TestSetInsetExtremelyLarge(){
 		int extremelyLargeInt = 100000;
@@ -37,7 +49,7 @@ public class SetMainTest {
 				
 	}
 	
-	// Req 4 : Insert multi elements with resizing
+	// Req : Insert multi elements with resizing
 	@Test
 	public void TestSetInsertMultiResizingInsert(){
 		int sizeMarginallyHigher = 11;
@@ -48,7 +60,14 @@ public class SetMainTest {
 		assertEquals(sizeMarginallyHigher, setMain.size());
 	}
 	
-	// Req 5 : Contains? non existing element
+	// Req : Contains for empty list
+	@Test
+	public void TestSetContainsEmptyList(){
+		SetMain setMain = new SetMain();
+		assertEquals(false, setMain.contains(1));
+	}
+	
+	// Req : Contains? non existing element
 	@Test
 	public void TestSetContainsNonExistingElement(){
 		int sizeMarginallyHigher = 11;
@@ -59,7 +78,7 @@ public class SetMainTest {
 		assertEquals(false, setMain.contains(14));
 	}
 	
-	// Req 6 : Contains for existing element
+	// Req : Contains for existing element
 	@Test
 	public void TestSetContainsExistingElement(){
 		int sizeMarginallyHigher = 11;
@@ -70,7 +89,15 @@ public class SetMainTest {
 		assertEquals(true, setMain.contains(9));
 	}
 	
-	// Req 7 : Delete non existing element
+	// Req : delete from an empty list
+	@Test
+	public void TestSetDeleteEmptyList(){
+		SetMain setMain = new SetMain();
+		assertEquals(false, setMain.delete(11));	
+		assertEquals(0, setMain.size());
+	}
+	
+	// Req : Delete non existing element
 	@Test
 	public void TestSetDeleteNonExistingElement(){
 		int sizeMarginallyHigher = 11;
@@ -81,7 +108,7 @@ public class SetMainTest {
 		assertEquals(false, setMain.delete(13));
 	}
 		
-	// Req 8 : Delete existing element
+	// Req : Delete existing element
 		@Test
 		public void TestSetDeleteExistingElement(){
 			int sizeMarginallyHigher = 11;
@@ -92,12 +119,5 @@ public class SetMainTest {
 			assertEquals(true, setMain.delete(10));
 			assertEquals(10, setMain.size());
 		}
-		
-		// Req 9 : delete from an empty list
-		@Test
-		public void TestSetDeleteEmptyList(){
-			SetMain setMain = new SetMain();
-			assertEquals(false, setMain.delete(11));	
-			assertEquals(0, setMain.size());
-		}
+	
 }
