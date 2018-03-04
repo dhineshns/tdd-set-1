@@ -80,7 +80,7 @@ public class SetMainTest {
 		}
 		assertEquals(false, setMain.delete(13));
 	}
-	
+		
 	// Req 8 : Delete existing element
 		@Test
 		public void TestSetDeleteExistingElement(){
@@ -91,5 +91,13 @@ public class SetMainTest {
 			}
 			assertEquals(true, setMain.delete(10));
 			assertEquals(10, setMain.size());
+		}
+		
+		// Req 9 : delete from an empty list
+		@Test
+		public void TestSetDeleteEmptyList(){
+			SetMain setMain = new SetMain();
+			assertEquals(false, setMain.delete(11));	
+			assertEquals(0, setMain.size());
 		}
 }
