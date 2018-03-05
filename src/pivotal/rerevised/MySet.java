@@ -53,6 +53,18 @@ public class MySet {
 	}
 
 	public boolean delete(int item) {
+		int i;
+		for(i=0; i<lastIndex+1; i++){
+			if(dataStore[i] == item){
+				break;
+			}
+		}
+		if(i<lastIndex+1){
+			for(int j=i; j<lastIndex; j++){
+				dataStore[j] = dataStore[j+1];
+			}
+		}
+		lastIndex--;
 		return false;
 	}
 
