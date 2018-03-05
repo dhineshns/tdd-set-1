@@ -119,5 +119,14 @@ public class SetMainTest {
 			assertEquals(true, setMain.delete(10));
 			assertEquals(10, setMain.size());
 		}
+		
+		// Req : Insert duplicates
+		@Test
+		public void TestSetInsertDuplicates(){
+			SetMain setMain = new SetMain();
+			setMain.insert(1);
+			setMain.insert(1);
+			assertEquals(1, setMain.size());
+		}
 	
 }

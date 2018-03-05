@@ -18,6 +18,11 @@ public class SetMain {
 
 	public void insert(int item) {
 		if(lastIndex<=dataStore.length/2){
+			for(int i = 0; i<=lastIndex; i++){
+				if(dataStore[i] == item){
+					return;
+				}
+			}
 			lastIndex++;
 			dataStore[lastIndex] = item;
 		}else{

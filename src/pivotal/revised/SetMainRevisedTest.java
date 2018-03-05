@@ -14,5 +14,4 @@ public class SetMainRevisedTest {
 		SetMainRevised setMainRevised = new SetMainRevised();
 		assertEquals(0, setMainRevised.size());
 	}
-
 }
