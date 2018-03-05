@@ -7,8 +7,9 @@ import org.junit.Test;
 public class MySetTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testMySetGetEmptySet() {
+		MySet mySet = new MySet();
+		assertEquals(false, mySet.get(1));
 	}
 
 }
