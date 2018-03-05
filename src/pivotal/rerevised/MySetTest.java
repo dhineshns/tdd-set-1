@@ -21,10 +21,17 @@ public class MySetTest {
 	@Test
 	public void testMySetInsert1Element(){
 		MySet mySet = new MySet();
-		mySet.insert(1);
+		assertEquals(true, mySet.insert(1));
 		assertEquals(true, mySet.isExists(1));
 		assertEquals(false, mySet.isExists(2));
 	}
-	
+	@Test
+	public void testMySetInsertDuplicates(){
+		MySet mySet = new MySet();
+		mySet.insert(1);
+		mySet.insert(1);
+		assertEquals(true, mySet.isExists(1));
+		assertEquals(1, mySet.size());
+	}
 
 }
