@@ -25,18 +25,27 @@ public class MySet {
 	}
 
 	public boolean insert(int item) {
-		for(int i=0; i<lastIndex+1; i++){
-			if(dataStore[i] == item){
-				return false;
+		if(lastIndex <= dataStore.length/2){
+			for(int i=0; i<lastIndex+1; i++){
+				if(dataStore[i] == item){
+					return false;
+				}
 			}
+			lastIndex++;
+			dataStore[lastIndex] = item;
+			return true;
+		}else{
+			int[] tempStore = new int[dataStore.length*2];
+			for(int i=0; i<lastIndex+1; i++){
+				tempStore[i] = dataStore[i];
+			}
+			dataStore = tempStore;
+			insert(item);
 		}
-		lastIndex++;
-		dataStore[lastIndex] = item;
-		return true;
+		return false;
 	}
 
 	public int size() {
-		// TODO Auto-generated method stub
 		return lastIndex+1;
 	}
 

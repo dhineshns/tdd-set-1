@@ -33,5 +33,13 @@ public class MySetTest {
 		assertEquals(true, mySet.isExists(1));
 		assertEquals(1, mySet.size());
 	}
+	@Test
+	public void testMySetInsertMoreThanDefaultSize(){
+		MySet mySet = new MySet();
+		for(int i=0; i<11; i++){
+			mySet.insert(i);
+		}
+		assertEquals(11, mySet.size());
+	}
 
 }
