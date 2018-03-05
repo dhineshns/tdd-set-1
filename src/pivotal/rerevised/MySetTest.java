@@ -18,6 +18,13 @@ public class MySetTest {
 		assertEquals(true, mySet.isExists(1));
 		assertEquals(false, mySet.isExists(2));
 	}
+	@Test
+	public void testMySetInsert1Element(){
+		MySet mySet = new MySet();
+		mySet.insert(1);
+		assertEquals(true, mySet.isExists(1));
+		assertEquals(false, mySet.isExists(2));
+	}
 	
 
 }

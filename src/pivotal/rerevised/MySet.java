@@ -24,4 +24,9 @@ public class MySet {
 		return false;
 	}
 
+	public void insert(int item) {
+		lastIndex++;
+		dataStore[lastIndex] = item;
+	}
+
 }
