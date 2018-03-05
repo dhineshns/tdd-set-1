@@ -52,4 +52,8 @@ public class MySet {
 		return lastIndex+1;
 	}
 
+	public boolean delete(int item) {
+		return false;
+	}
+
 }

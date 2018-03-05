@@ -46,5 +46,14 @@ public class MySetTest {
 		MySet mySet = new MySet(new int[]{1,1,2});
 		assertEquals(2, mySet.size());
 	}
-
+	
+	@Test
+	public void testMySetDeleteNonExistingElement(){
+		MySet mySet = new MySet();
+		mySet.insert(1);
+		assertEquals(false, mySet.delete(2));
+		assertEquals(1, mySet.size());
+	}
+	
+	
 }
