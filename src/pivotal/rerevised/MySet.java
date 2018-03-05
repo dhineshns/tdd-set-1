@@ -6,8 +6,11 @@ public class MySet {
 	int lastIndex;
 
 	public MySet(int[] is) {
-		dataStore = is;
-		lastIndex = dataStore.length-1;
+		dataStore = new int[10];
+		lastIndex = -1;
+		for(int i=0; i<is.length; i++){
+			insert(is[i]);
+		}
 	}
 	
 	public MySet(){

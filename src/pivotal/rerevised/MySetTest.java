@@ -41,5 +41,10 @@ public class MySetTest {
 		}
 		assertEquals(11, mySet.size());
 	}
+	@Test
+	public void testMySetArrayConstructorWithDuplicates(){
+		MySet mySet = new MySet(new int[]{1,1,2});
+		assertEquals(2, mySet.size());
+	}
 
 }
